@@ -19,5 +19,13 @@ router.post('/newParc', async (req, res) => {
         res.status(400).send(err)
     }
 });
+router.get('/Parcelle', (req,res) => {
+    Parcelle.find(function(err, par){
+        if(err){
+            res.send(err)
+        }
+        res.json(par)
+    })
+})
 
 module.exports = router;

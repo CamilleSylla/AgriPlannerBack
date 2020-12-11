@@ -19,5 +19,13 @@ router.post('/newLegume', async (req, res) => {
         res.status(400).send(err)
     }
 });
+router.get('/Legume', (req,res) => {
+    Legume.find(function(err, leg){
+        if(err){
+            res.send(err)
+        }
+        res.json(leg)
+    })
+})
 
 module.exports = router;

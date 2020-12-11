@@ -14,6 +14,7 @@ dotenv.config();
 //import routes
 const parc = require('./routes/private/manageParc')
 const legu = require('./routes/private/manageLegume')
+const cult = require('./routes/private/manageCult')
 
 //db
 mongoose.connect(process.env.DB_CONNECT, { useNewUrlParser: true }, () => {
@@ -24,6 +25,7 @@ mongoose.connect(process.env.DB_CONNECT, { useNewUrlParser: true }, () => {
 //route middleware
 app.use('/api/', parc)
 app.use('/api/', legu)
+app.use('/api/', cult)
 
 
 app.listen(process.env.PORT || 5000, () => console.log('server is running'));
