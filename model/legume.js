@@ -28,6 +28,10 @@ const parcelleSchema = new mongoose.Schema({
     type: Array,
     "default": []
   },
+  fenetre: {
+    type: String,
+    min: 0,
+  },
   color: {
       type: String,
       required: true,

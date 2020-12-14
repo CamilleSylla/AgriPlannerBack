@@ -27,5 +27,15 @@ router.get('/Parcelle', (req,res) => {
         res.json(par)
     })
 })
+router.delete("/parcelle/delete", async (req, res) => {
+    try {
+      const removeParcelle = await Parcelle.deleteOne({ _id: req.body.id });
+      res.send("Element supprimé");
+    } catch (err) {
+      if (err) {
+        res.status(400).send(err);
+      }
+    }
+  });
 
 module.exports = router;

@@ -9,6 +9,7 @@ router.post('/newLegume', async (req, res) => {
         unit: req.body.unit,
         growLength: req.body.growLength,
         variete: req.body.variete,
+        fenetre: req.body.fenetre,
         color: req.body.color
     });
 
@@ -27,5 +28,15 @@ router.get('/Legume', (req,res) => {
         res.json(leg)
     })
 })
+router.delete("/legume/delete", async (req, res) => {
+    try {
+      const removeLegume = await Legume.deleteOne({ _id: req.body.id });
+      res.send("Element supprimé");
+    } catch (err) {
+      if (err) {
+        res.status(400).send(err);
+      }
+    }
+  });
 
 module.exports = router;
