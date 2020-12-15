@@ -38,5 +38,16 @@ router.delete("/legume/delete", async (req, res) => {
       }
     }
   });
+  router.patch("/legume/update", async (req, res) => {
+    try {
+      const updatedLegume = await Legume.updateOne(
+        { _id: req.body.id },
+        { $set: req.body }
+      );
+      res.json(updatedLegume);
+    } catch (err) {
+      res.json({ message: err });
+    }
+  });
 
 module.exports = router;

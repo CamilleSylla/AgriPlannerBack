@@ -48,4 +48,16 @@ router.delete("/cult/delete", async (req, res) => {
   }
 });
 
+router.patch("/cult/update", async (req, res) => {
+  try {
+    const updatedCult = await Cult.updateOne(
+      { _id: req.body.id },
+      { $set: req.body }
+    );
+    res.json(updatedCult);
+  } catch (err) {
+    res.json({ message: err });
+  }
+});
+
 module.exports = router;

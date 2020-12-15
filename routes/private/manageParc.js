@@ -38,4 +38,16 @@ router.delete("/parcelle/delete", async (req, res) => {
     }
   });
 
+  router.patch("/parcelle/update", async (req, res) => {
+    try {
+      const updatedParcelle = await Parcelle.updateOne(
+        { _id: req.body.id },
+        { $set: req.body }
+      );
+      res.json(updatedParcelle);
+    } catch (err) {
+      res.json({ message: err });
+    }
+  });
+
 module.exports = router;
