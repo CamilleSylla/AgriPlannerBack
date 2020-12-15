@@ -16,6 +16,7 @@ router.post("/newCult", async (req, res) => {
     unit: req.body.unit,
     variete: req.body.variete,
     color: req.body.color,
+    quantity: req.body.quantity,
     start: req.body.start,
   });
 

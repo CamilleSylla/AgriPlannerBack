@@ -21,6 +21,9 @@ const CultSchema = new mongoose.Schema({
     type: String,
     required: true,
   },
+  quantity: {
+    type: String,
+  },
   growLength: {
     type: Number,
     required: true
