@@ -15,6 +15,8 @@ dotenv.config();
 const parc = require('./routes/private/manageParc')
 const legu = require('./routes/private/manageLegume')
 const cult = require('./routes/private/manageCult')
+const preset = require('./routes/private/managePreset')
+const stock = require('./routes/private/manageStock')
 
 //db
 mongoose.connect(process.env.DB_CONNECT, { useNewUrlParser: true }, () => {
@@ -26,6 +28,8 @@ mongoose.connect(process.env.DB_CONNECT, { useNewUrlParser: true }, () => {
 app.use('/api/', parc)
 app.use('/api/', legu)
 app.use('/api/', cult)
+app.use('/api/', stock)
+app.use('/api/', preset)
 
 
 app.listen(process.env.PORT || 5000, () => console.log('server is running'));

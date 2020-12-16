@@ -31,19 +31,27 @@ const CultSchema = new mongoose.Schema({
   fenetre: {
     type: Number,
   },
-  rowNum: {
+  numberP: {
     type: Number,
     required: true
   },
-  rowLength: {
+  lengthP: {
     type: Number,
     required: true
   },
-  rowWidth: {
+  widthP: {
     type: Number,
     required: true
   },
-  spaceBet: {
+  spaceP: {
+    type: Number,
+    required: true
+  },
+  row: {
+    type: Number,
+    required: true
+  },
+  spaceRow: {
     type: Number,
     required: true
   },
