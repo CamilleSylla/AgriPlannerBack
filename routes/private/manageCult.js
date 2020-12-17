@@ -12,7 +12,7 @@ router.post("/newCult", async (req, res) => {
     numberP: req.body.numberP,
     lengthP: req.body.lengthP,
     widthP: req.body.widthP,
-    spaceP: req.body.widthP,
+    spaceP: req.body.spaceP,
     row: req.body.row,
     spaceRow: req.body.spaceRow,
     unit: req.body.unit,
